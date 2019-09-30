@@ -1,0 +1,30 @@
+{
+  "name": "azure-pipelines-core-lib",
+  "version": "1.0.0",
+  "description": "Wrapper on top of azure-pipelines-task-lib and @actions toolkits",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SumiranAgg/azure-pipelines-core-lib.git"
+  },
+  "author": "Sumiran Aggarwal <suaggar@microsoft.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SumiranAgg/azure-pipelines-core-lib/issues"
+  },
+  "homepage": "https://github.com/SumiranAgg/azure-pipelines-core-lib#readme",
+  "devDependencies": {
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "@actions/core": "^1.1.1",
+    "@actions/exec": "^1.0.1",
+    "@actions/io": "^1.0.1",
+    "@types/node": "^12.7.8",
+    "azure-pipelines-task-lib": "^2.9.3"
+  }
+}
