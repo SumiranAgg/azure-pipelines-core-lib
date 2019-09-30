@@ -1,4 +1,4 @@
-var tl, core, io, ex;
+var tl, core, io, ex, ioutil;
 
 var libType = process.env['CORE_LIB_TYPE'];
 
@@ -10,6 +10,7 @@ switch(libType) {
         core = require("@actions/core");
         io = require("@actions/io");
         ex = require("@actions/exec");
+        ioutil = require("@actions/io/io-util");
         break;
     default:
         throw new Error('Wring lib type set in CORE_LIB_TYPE. Valid values are "Task" and "Action".');
@@ -102,6 +103,15 @@ export function exec(tool: string, args: any, options?: any): Promise<number> {
     }
     else{
         return ex.exec(tool, args, options);
+    }
+}
+
+export async function exist(path: string): Promise<boolean> {
+    if(libType == "Task") {
+        return tl.exist(path);
+    }
+    else{
+        await ioutil.exists(path);
     }
 }
 
