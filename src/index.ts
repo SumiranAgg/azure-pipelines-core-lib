@@ -111,7 +111,7 @@ export async function exist(path: string): Promise<boolean> {
         return tl.exist(path);
     }
     else{
-        await ioutil.exists(path);
+        return await ioutil.exists(path);
     }
 }
 
